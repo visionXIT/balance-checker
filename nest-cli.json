@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "entryFile": "bootstrapApi",
+  "projects": {
+    "api": {
+      "type": "application",
+      "root": ".",
+      "entryFile": "bootstrapApi",
+      "sourceRoot": "src"
+    },
+    "schedule": {
+      "type": "application",
+      "root": ".",
+      "entryFile": "bootstrapSchedule",
+      "sourceRoot": "src"
+    }
+  },
+  "compilerOptions": {
+    "webpack": false
+  }
+}

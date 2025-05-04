@@ -75,5 +75,3 @@ export class EvmBalanceChecker extends BalanceChecker {
     return balance;
   }
 }
-
-//0b5c72bc3176f7ad5cb5d94f82b0aa40c6fae998e9303bd98d0e3e9fcd617965

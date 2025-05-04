@@ -19,5 +19,5 @@ FROM packages as prod
 WORKDIR /usr/src/app
 RUN npm install --omit=dev --ignore-scripts
 COPY --from=build /usr/src/app/dist ./dist
-COPY --from=build /usr/src/app/migrations/data ./dist/migrations/data
+COPY --from=build /usr/src/app/migrations ./dist/migrations
 CMD ["node", "dist/src/bootstrapApi"]

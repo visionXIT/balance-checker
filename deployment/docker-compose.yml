@@ -1,0 +1,38 @@
+version: '3.9'
+services:
+  api:
+    image: ${IMAGE_NAME}
+    command: node /usr/src/app/dist/src/bootstrapApi
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - internal
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  schedule:
+    image: ${IMAGE_NAME}
+    command: node /usr/src/app/dist/src/bootstrapSchedule
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - internal
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  redis:
+    image: 'redis:6.2.5-buster'
+    restart: unless-stopped
+    networks:
+      - internal
+
+networks:
+  internal:
